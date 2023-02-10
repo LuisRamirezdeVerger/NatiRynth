@@ -1,0 +1,8 @@
+C:\Users\user\Documents\Visual Studio Projects\AntiScape  cSharp\AntiScape  cSharp\bin\Debug\AntiScape  cSharp.exe.config
+C:\Users\user\Documents\Visual Studio Projects\AntiScape  cSharp\AntiScape  cSharp\bin\Debug\AntiScape  cSharp.exe
+C:\Users\user\Documents\Visual Studio Projects\AntiScape  cSharp\AntiScape  cSharp\bin\Debug\AntiScape  cSharp.pdb
+C:\Users\user\Documents\Visual Studio Projects\AntiScape  cSharp\AntiScape  cSharp\obj\Debug\AntiScape  cSharp.csproj.AssemblyReference.cache
+C:\Users\user\Documents\Visual Studio Projects\AntiScape  cSharp\AntiScape  cSharp\obj\Debug\AntiScape  cSharp.csproj.SuggestedBindingRedirects.cache
+C:\Users\user\Documents\Visual Studio Projects\AntiScape  cSharp\AntiScape  cSharp\obj\Debug\AntiScape  cSharp.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\Visual Studio Projects\AntiScape  cSharp\AntiScape  cSharp\obj\Debug\AntiScape  cSharp.exe
+C:\Users\user\Documents\Visual Studio Projects\AntiScape  cSharp\AntiScape  cSharp\obj\Debug\AntiScape  cSharp.pdb
