@@ -11,33 +11,31 @@ namespace AntiScape__cSharp
         //public static string consola = Console.ReadLine();
 
         static void Main(string[] args)
-        {          
-            //Mejorar tutorial. Hacer saber al jugador como poder hacer el laberinto
+        {
+            //Cambiar aqui cuando termine es test
+            //Laberinto.Segmento4();
+            //Mejorar tutorial. Hacer saber que no tiene que esperar más de 5s para PULSAR INTRO
             Console.WriteLine("Bienvenidos a NatiRynth, este juego es una aventura textual, lo que significa que carece de gráficos. " +
-                "Para jugar, deberás introducir comandos. El juego consiste en que adivines que comando he programado yo para según que situación. Si te quedas sin saber que hacer, prueba a pedir 'ayuda', a lo mejor sirve de algo. ^^' ");
-            Console.WriteLine("Pulsa 'INTRO' para continuar...  ");
+                "Para jugar, deberás introducir comandos. El juego consiste en que adivines que comando he programado yo para según que situación. Si te quedas sin saber que hacer, bueno, en parte en el texto está la respuesta. ^^' ");
+            Console.WriteLine("¡Sabrás hacerlo sin problemas!");
+            Console.WriteLine("En algunos momentos, el texto se generará automáticamente. Si han pasado 5s y te falta texto, pulsa INTRO para continuar");
             Console.Read();
-            
+            Console.WriteLine("Lo vas pillando :)");
+            Console.Read();
+            Console.Clear();
             Console.WriteLine("Te recomiendo encarecidadmente leer todo minuciosamente... En el TEXTO está la respuesta y no todo se repite...");
             Console.Read();
             Console.WriteLine("¡Disfruta de la experiencia!");
-            System.Threading.Thread.Sleep(3000);
-            //Console.Read();
+            System.Threading.Thread.Sleep(3000);            
             Console.WriteLine("...");
-            System.Threading.Thread.Sleep(3000);
-            //Console.Read();
+            System.Threading.Thread.Sleep(3000); 
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkYellow;
-            //Console.Read();
             System.Threading.Thread.Sleep(2500);
             Console.WriteLine("En serio... En el TEXTO... está la respuesta...");
-            
-            //Console.ReadLine();
             Console.WriteLine("...");
             System.Threading.Thread.Sleep(2000);
             Console.Clear();
-            // Cambiar aqui cuando se termine de testear \\
-            Laberinto.Segmento0();
             Juego();
         }
 
@@ -52,26 +50,24 @@ namespace AntiScape__cSharp
 
             string nick = Console.ReadLine();
 
-            Console.Read();
             Console.WriteLine("Welcome, {0}, que comience el juego...", nick);
+            Console.WriteLine("Pulsa INTRO para continuar...");
 
             string nick1 = nick;
             
             Console.ReadLine();
 
-            Console.Read();
-            //Mirar bien tema de colores, puede dar mucho juego.
+            //Mirar con calma el tema de colores, puede dar mucho juego.
             Console.ForegroundColor = ConsoleColor.White;
 
 
-            //Prólogo aquí
             Console.Read();
             Console.Clear();
             Console.WriteLine("Después de un frío y lluvioso invierno, por fin quedas con tu pandilla para ir al nuevo parque de atracciones que ha abierto en tu ciudad. ");
+
             Console.Read();
             Console.WriteLine("Te despiertas tarde, hoy es sábado y el cuerpo lo sabe. Te desperezas una última vez y te dispones a levantarte...\n");
             Console.Read();
-            //Console.WriteLine("");
             Console.WriteLine("En casa no hay nadie, hoy han salido a almorzar. Engulles el almuerzo, tus ganas de diversión son mayores que cualquier mal. ");
             Console.Read();
             Console.WriteLine("Al terminar de comer, por fin llega la hora de salir. ");
@@ -83,14 +79,13 @@ namespace AntiScape__cSharp
             Console.WriteLine("Después de un corto viaje, por fin llegáis al parque de atracciones y os encamináis al laberinto.  ");
             Console.Read();
             Console.WriteLine("- Amigo0: {0}, Por fin hemos llegado a NatiRynth, ¿estás preparado para el laberinto? ", nick1);
-            Console.Read();
             PrePrologo();
                         
         }
 
         public static void PrePrologo() 
         {
-            EscribeComando();
+            Console.WriteLine("Escribe tu respuesta: ");
             string consola = Console.ReadLine();
           
      
@@ -113,7 +108,7 @@ namespace AntiScape__cSharp
                 case "callate":
                     Console.WriteLine("- Bueno, bueno, bueno. ¡No hacé falta ponerse así! ");
                     //Dejalo así
-                    Console.WriteLine("Mejor callate vos y dame una respuesta. ");
+                    Console.WriteLine("Mejor callate vos y deme una respuesta. ");
                     PrePrologo();
                     break;
                
@@ -125,11 +120,11 @@ namespace AntiScape__cSharp
         }
 
 
-        //Habitaciones.
         public static void Prologo()
         {
             Console.Read();
             Console.WriteLine("Vais directos hacia el laberinto. Alrededor hay muchas atracciones de todo tipo. Justo frente a ti hay un ");
+            //Describir mejor el edificio
             Console.WriteLine("gran cartel en el que está escrito 'NATIRYNTH' en una tipografía un tanto tenebrosa. Al acercaros, ves un pequeño edificio morado. ");
             Console.Read();
 
@@ -169,11 +164,13 @@ namespace AntiScape__cSharp
             Console.Read();
             Console.WriteLine("Una vez cerréis la puerta, vuestros pensamientos serán los que os dirijan. ");
             Console.Read();
+            Console.WriteLine("Si estáis un poco perdidos, sugestiono 'mirar alrededor', siempre es bueno saber donde estáis, ¿no creéis?");
+            Console.Read();
             Console.WriteLine("Así que ojito con lo que escrib... *¡ejem!* Pensáis. ");
             Console.Read();
-            Console.WriteLine("Al momento, vuelve a su puesto. Vosotros, os adentráis y veis una sala con una puerta para cada persona. ");
+            Console.WriteLine("Al momento, vuelve a su puesto. Vosotros, os adentráis y veis una sala completamente blanca con una puerta para cada persona. ");
             Console.Read();
-            Console.WriteLine("Hay algo en la puerta que te llama mucho la atención, es una puerta ordinaria, pero parece de plastilina. ");
+            Console.WriteLine("Hay algo en la puerta que te llama mucho la atención, es una puerta ordinaria con colores muy llamativos, pero parece de plastilina. ");
             Console.Read();
             Console.WriteLine("No puedes evitar tus ganas de tocarla...");
             System.Threading.Thread.Sleep(5000);
@@ -292,6 +289,18 @@ namespace AntiScape__cSharp
             string console = Console.ReadLine();
 
         }
+
+        public static void RecuentoLogros(int recuentoLogros = 0)
+        {
+             
+            if (recuentoLogros > 0)
+            {
+                //Se podria crear un contador en "Program.cs", crear uno en "Laberinto.cs" y sumarlos en Program para que quede centralizado.
+                Console.WriteLine("Tus logros totales son {0}", recuentoLogros);
+            }
+        }
+        
+        
         public static void MenosVida()
         {
             Game.vida--;

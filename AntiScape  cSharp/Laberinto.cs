@@ -5,14 +5,10 @@ namespace AntiScape__cSharp
 {
     public  static class Laberinto
     {
-        //Parece redundante
-        // "Pulsa INTRO para continuar"
-        //Hacer saber al usuario que puede "mirar alrededor"
-        //!!!!!   <<<< El error esta que el segmento4 (el de las ramas) esta mal dirigido si saltas, pero bien si cruzas >>>>
+        //Segmento4 está ¡¡¡¡ FUCKING BUGGED !!!!
         //Posible sistema de logros poniendo contadores segun acciones, ej, "terminar el tutorial", "saltar"..: If (saltar){
         // ContadorSalto++;
         // }
-        //¿Meter "AYUDA"? 
         public static void TeTocaEscribir()
         {
             Console.WriteLine("¿Qué quieres hacer ahora?");
@@ -21,7 +17,6 @@ namespace AntiScape__cSharp
         {
             TeTocaEscribir();
             string consola = Console.ReadLine();
-            // Hay que hacer que abra la puerta
             
 
             if (consola == "ir norte")
@@ -52,7 +47,6 @@ namespace AntiScape__cSharp
             string consola = Console.ReadLine();
 
 
-            //Mejorar el texto de o/este para meter más al jugador
             if (consola == "ir oeste")
             {
                 Console.WriteLine("Miras a tu izquierda, parece haber camino, pero también que los límites del laberinto están cerca. Te diriges al oeste. ");
@@ -102,6 +96,10 @@ namespace AntiScape__cSharp
                     Console.WriteLine("Vuelves sobre tus pasos... ");
                     Segmento1();
                     break;
+                case "mirar alrededor":
+                    Console.WriteLine("Es muy alto, pero observas que puedes ver algunas atracciones del parque, no parece ser el camino indicado... ");
+                    Segmento2();
+                    break;
                 default:
                     Console.WriteLine("No puedes hacer eso >.<^ ");
                     Segmento2();
@@ -124,8 +122,15 @@ namespace AntiScape__cSharp
                     Console.WriteLine("Pierdes una vida... Espera... ¿Cómo? ¿Cuántas tienes?");
                     TextoSegmento4();
                     break;
+                case "mirar alrededor":
+                    Console.WriteLine("Las ramas molestas, pero son frágiles y tienen muy poca altura. ");
+                    Console.Read();
+                    Console.WriteLine("Solo hay 2 caminos posibles, misma dirección u opuesta. ");
+                    Segmento3();
+                    break;
                 case "saltar":
                     saltoContador++;
+                    //RecuentoLogros(); --> Línea 306 de "Program.cs" <--
                     Console.WriteLine("Después de haberlo meditado el tiempo suficiente, te dispones, coges carrerilla y... ");
                     Console.Read();
                     System.Threading.Thread.Sleep(1500);
@@ -147,20 +152,23 @@ namespace AntiScape__cSharp
                     Console.Read();
                     Console.Clear();
                     //Mirar bien aqui, el codigo ASCII no se refleja bien
-                    //La logica funciona 100%
-                    /*
-                    if (saltoContador > 0)
+                    //El ASCII de logros va aquí!
+                    
+                    if (saltoContador == 1)
                     {
-                        Console.WriteLine("_\t_____\t_____\t______\t_____");
-                        Console.WriteLine("| |\t|  _  \t||  __ \t| ___ \t|  _  |");
-                        Console.WriteLine("| |\t| | | \t|| |  "+"/"+"\t| |_/ /\t| | | |");
-                        Console.WriteLine("| |\t| | | \t|| | __ \t|    / \t| | | |");
-                        Console.WriteLine("| |____\t\\ \\_/ /\t| |_\\ \t| |\\ \\ \t\\_/ /");
-                        Console.WriteLine("\\_____/\t \\___/ \t \\____/\t\\_| \\_|\t \\___/");
+                        Console.Clear();
+                        Console.WriteLine(" ¡ESPERA! ");
+                        System.Threading.Thread.Sleep(2000);
+                        Console.WriteLine("¡Logro desbloqueado!");
+                        Console.WriteLine("¡¡ PARKOUR !!");
+                        System.Threading.Thread.Sleep(2000);
 
-                    }*/
+                        TextoSegmento4();
+                    }
                     TextoSegmento4();
                     break;
+
+                    
                 case "ir oeste":
                     Console.WriteLine("Vuelves sobre tus pisadas. ");
                     Segmento2();
@@ -181,6 +189,7 @@ namespace AntiScape__cSharp
                 "una energía recorre tu cuerpo de pies a cabeza. ");
             Console.Read();
             Console.Clear();
+            Segmento4();
         }
 
         public static void TextoSegmento3SinRama()
@@ -193,7 +202,7 @@ namespace AntiScape__cSharp
         public static void Segmento3SinRama()
         {
             
-            Console.WriteLine("Las ramas del camino han desaparecido...Pasas sin problemas. ");
+            Console.WriteLine("Las ramas del camino han desaparecido... Pasas sin problemas. ");
             TeTocaEscribir();
             string consola = Console.ReadLine();
 
@@ -208,6 +217,11 @@ namespace AntiScape__cSharp
                     Console.WriteLine("Vuelves al principio. ");
                     Segmento2();
                     break;
+                case "mirar alrededor":
+                    Console.WriteLine("Ya no hay ramas! Ahora puedes pasar sin problema alguno... ");
+                    Console.WriteLine("Pero en serio... Y los demás?");
+                    Segmento3SinRama();
+                    break;
 
                 default:
                     Console.WriteLine("No puedes hacer eso >.<^ ");
@@ -218,42 +232,51 @@ namespace AntiScape__cSharp
 
         public static void Segmento4()
         { 
-            //Mirar bien, parece que no recoge la info del input
-            //Mejorar texto para mayor inmersión
-            Console.WriteLine("Vaya, se ha complicado un poco más el camino. Puedes ir norte, sur y este. ");
+            Console.WriteLine("Vaya, se ha complicado un poco más el camino, ahora hay tres posibilidades. ");
             TeTocaEscribir();
-            string console = Console.ReadLine();
+            string consola = Console.ReadLine();
 
-            switch (console)
+            //Cambiar a if/else. Solo recoge 1 input
+            
+            
+            if (consola == "ir norte")
             {
-                case "ir norte":
-                    Console.WriteLine("Te diriges al norte, al doblar una esquina, ves otra calle sin salida. Hay que volver. ");
-                    Console.Read();
-                    Segmento4();
-                    break;
-                case "ir sur":
-                    TextoSegmentoPrepUerta();
-                    Console.WriteLine("Después de andar durante bastante tiempo, doblas una esquina, y...");
-                    Console.Read();
-                    Console.WriteLine("Te topas con una puerta, parece diferente a la de entrada. ");
-                    Console.Read();
-                    Habitaciones.Puerta();
-                    break;
-                case "ir este":
-                    Console.WriteLine("Después de una esquina, no hay salida. Toca volver. ");
-                    Console.Read();
-                    Segmento4();
-                    break;
-                case "ir oeste":
-                    Console.WriteLine("Vuelves sobre tus pasos. ");
-                    Console.Read();
-                    Segmento2();
-                    break;
-                default:
-                    Console.WriteLine("Error message. Segmento4 ");
-                    Console.Read();
-                    Segmento4();
-                    break;
+                Console.WriteLine("Te diriges al norte, al doblar una esquina, ves otra calle sin salida. Hay que volver. ");
+                Console.Read();
+                Segmento4();
+            }
+            else if (consola == "ir sur")
+            {
+                TextoSegmentoPrepUerta();
+                Console.WriteLine("Después de andar durante bastante tiempo, doblas una esquina, y... ");
+                Console.Read();
+                Console.WriteLine("Te topas con una puerta, parece diferente a la de entrada. ");
+                Console.Read();
+                Habitaciones.Puerta();
+            }
+            else if (consola == "ir este")
+            {
+                Console.WriteLine("Después de una esquina, no hay salida. Toca volver. ");
+                Console.Read();
+                Segmento4();
+            }
+            else if (consola == "ir oeste")
+            {
+                Console.WriteLine("Vuelves sobre tus pasos. ");
+                Console.Read();
+                Segmento2();
+            }
+            else if (consola == "mirar alrededor")
+            {
+                Console.WriteLine("Es abrumador, las paredes parecen haber crecido, la luz del sol no llega hasta aquí, pero se puede ver sin problemas... ");
+                Console.WriteLine("Puedes seguir recto o cambiar de dirección. ");
+                Console.Read();
+                Segmento4();
+            } else
+            {
+                Console.WriteLine("No puedes hacer eso. Segmento4 ");
+                Console.Read();
+                Segmento4();
             }
         }
         
