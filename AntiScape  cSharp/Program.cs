@@ -18,6 +18,7 @@ namespace AntiScape__cSharp
             Console.WriteLine("Bienvenidos a NatiRynth, este juego es una aventura textual, lo que significa que carece de gráficos. " +
                 "Para jugar, deberás introducir comandos. El juego consiste en que adivines que comando he programado yo para según que situación. Si te quedas sin saber que hacer, bueno, en parte en el texto está la respuesta. ^^' ");
             Console.WriteLine("¡Sabrás hacerlo sin problemas!");
+            //add a question where they answer if they want help or not
             Console.WriteLine("En algunos momentos, el texto se generará automáticamente. Si han pasado 5s y te falta texto, pulsa INTRO para continuar");
             Console.Read();
             Console.WriteLine("Lo vas pillando :)");
